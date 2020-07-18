@@ -1,0 +1,174 @@
+{
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": -1464245863,
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "seed": -1464245863,
+      "biomes": [
+        {
+          "biome": "minecraft:desert",
+          "parameters": {
+            "temperature": 1.0,
+            "humidity": -1.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:gravelly_mountains",
+          "parameters": {
+            "temperature": -1.0,
+            "humidity": -1.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:savanna",
+          "parameters": {
+            "temperature": 1.0,
+            "humidity": -0.5,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:snowy_tundra",
+          "parameters": {
+            "temperature": -1.0,
+            "humidity": -0.5,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:sunflower_plains",
+          "parameters": {
+            "temperature": 1.0,
+            "humidity": 0.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:plains",
+          "parameters": {
+            "temperature": 0.0,
+            "humidity": 0.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:jungle",
+          "parameters": {
+            "temperature": 1.0,
+            "humidity": 0.5,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:forest",
+          "parameters": {
+            "temperature": 0.0,
+            "humidity": 0.5,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:taiga",
+          "parameters": {
+            "temperature": -0.5,
+            "humidity": 0.5,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:snowy_taiga",
+          "parameters": {
+            "temperature": -1.0,
+            "humidity": 0.5,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:frozen_ocean",
+          "parameters": {
+            "temperature": -1.0,
+            "humidity": 1.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:cold_ocean",
+          "parameters": {
+            "temperature": -0.5,
+            "humidity": 1.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:ocean",
+          "parameters": {
+            "temperature": 0.0,
+            "humidity": 1.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:beach",
+          "parameters": {
+            "temperature": 0.0,
+            "humidity": 0.75,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:lukewarm_ocean",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 1.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "minecraft:warm_ocean",
+          "parameters": {
+            "temperature": 1.0,
+            "humidity": 1.0,
+            "altitude": 0.0,
+            "weirdness": 0.0,
+            "offset": 0.0
+          }
+        }
+      ]
+    },
+    "settings": "minecraft:overworld"
+  },
+  "type": "minecraft:overworld"
+}

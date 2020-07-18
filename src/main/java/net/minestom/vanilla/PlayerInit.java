@@ -1,5 +1,6 @@
 package net.minestom.vanilla;
 
+import com.google.gson.Gson;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.data.Data;
 import net.minestom.server.data.SerializableData;
@@ -15,18 +16,13 @@ import net.minestom.server.event.player.PlayerLoginEvent;
 import net.minestom.server.event.player.PlayerMoveEvent;
 import net.minestom.server.event.player.PlayerSpawnEvent;
 import net.minestom.server.extras.MojangAuth;
-import net.minestom.server.gamedata.loottables.LootTable;
-import net.minestom.server.gamedata.loottables.LootTableManager;
 import net.minestom.server.instance.ExplosionSupplier;
 import net.minestom.server.instance.InstanceContainer;
-import net.minestom.server.instance.block.Block;
-import net.minestom.server.instance.block.CustomBlock;
 import net.minestom.server.item.ItemStack;
 import net.minestom.server.item.Material;
 import net.minestom.server.network.ConnectionManager;
 import net.minestom.server.storage.StorageManager;
 import net.minestom.server.timer.TaskRunnable;
-import net.minestom.server.utils.NamespaceID;
 import net.minestom.server.utils.Position;
 import net.minestom.server.utils.Vector;
 import net.minestom.server.utils.time.TimeUnit;
@@ -34,12 +30,14 @@ import net.minestom.server.world.DimensionType;
 import net.minestom.vanilla.anvil.AnvilChunkLoader;
 import net.minestom.vanilla.blocks.NetherPortalBlock;
 import net.minestom.vanilla.blocks.VanillaBlocks;
+import net.minestom.vanilla.generation.DimensionBasedGenerator;
 import net.minestom.vanilla.generation.VanillaTestGenerator;
+import net.minestom.vanilla.generation.dimension.json.Dimension;
 import net.minestom.vanilla.instance.VanillaExplosion;
 import net.minestom.vanilla.system.ServerProperties;
 
-import java.io.FileNotFoundException;
-import java.util.List;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class PlayerInit {
 
@@ -59,7 +57,7 @@ public class PlayerInit {
         VanillaTestGenerator noiseTestGenerator = new VanillaTestGenerator();
         overworld = MinecraftServer.getInstanceManager().createInstanceContainer(DimensionType.OVERWORLD, storageManager.getFolder(worldName+"/data")); // TODO: configurable
         overworld.enableAutoChunkLoad(true);
-        overworld.setChunkGenerator(noiseTestGenerator);
+        overworld.setChunkGenerator(new DimensionBasedGenerator(testDimension("lime/desert_or_ocean.json")));
         overworld.setData(new SerializableData());
         overworld.setExplosionSupplier(explosionGenerator);
         overworld.setChunkLoader(new AnvilChunkLoader(storageManager.getFolder(worldName+"/region")));
@@ -178,5 +176,16 @@ public class PlayerInit {
                 itemEntity.setVelocity(velocity);
             });
         });
+    }
+
+    private static Dimension testDimension(String s) {
+        String testPath = "datapacks/Multinoise/data/minecraft/dimension/"+s;
+        try(FileReader fr = new FileReader(testPath)) {
+            Dimension dim = new Gson().fromJson(fr, Dimension.class);
+            return dim;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
