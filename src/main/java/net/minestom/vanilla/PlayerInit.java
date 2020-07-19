@@ -57,7 +57,7 @@ public class PlayerInit {
         VanillaTestGenerator noiseTestGenerator = new VanillaTestGenerator();
         overworld = MinecraftServer.getInstanceManager().createInstanceContainer(DimensionType.OVERWORLD, storageManager.getFolder(worldName+"/data")); // TODO: configurable
         overworld.enableAutoChunkLoad(true);
-        overworld.setChunkGenerator(new DimensionBasedGenerator(testDimension("lime/desert_or_ocean.json")));
+        overworld.setChunkGenerator(new DimensionBasedGenerator(testDimension("lime/humidity_temperature_beaches_offset.json")));
         overworld.setData(new SerializableData());
         overworld.setExplosionSupplier(explosionGenerator);
         overworld.setChunkLoader(new AnvilChunkLoader(storageManager.getFolder(worldName+"/region")));
