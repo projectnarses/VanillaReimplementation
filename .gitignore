@@ -27,7 +27,12 @@ hs_err_pid*
 # IntelliJ and Gradle files
 .idea/
 out/
-.gradle/
+### Gradle template
+.gradle
+/build/
+
+### Maven
+/target/
 
 # Minestom
 /minecraft_data/
